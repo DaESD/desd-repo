@@ -12,3 +12,10 @@ Sprint 1 backlog:
 10. Establish contribution tracking - Agree how work, commits, issues and documentation will be recorded.
 11. Review completed work - Check that all criteria has been met on BPMN, scope, backlog and sprint plan are consistent.
 12. Begin I* modelling - if time permits, identify relevant actors, goals, dependencies and initial strategic relationships.
+
+
+Notes:
+Break current sprint backlog into even smaller task e.g.
+4 - BPMN:
+4.1 - identify the groups of systems working together.
+4.2 - identify the tasks needed
