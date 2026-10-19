@@ -7,3 +7,5 @@ Sprint 1 backlog:
 5. Identify candidate functionality 1 - Define Producer Product Listing and Inventory Management, including its purpose, boundaries and main business value.
 6. Identify candidate functionality 2 - Select and scope a second major functionality appropriate to the marketplace.
 7. Develop initial product backlog - Translate both candidate functionalities into prioritised user stories with initial acceptance criteria. 
+
+please finish
