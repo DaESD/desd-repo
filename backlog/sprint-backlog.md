@@ -7,5 +7,8 @@ Sprint 1 backlog:
 5. Identify candidate functionality 1 - Define Producer Product Listing and Inventory Management, including its purpose, boundaries and main business value.
 6. Identify candidate functionality 2 - Select and scope a second major functionality appropriate to the marketplace.
 7. Develop initial product backlog - Translate both candidate functionalities into prioritised user stories with initial acceptance criteria. 
-
-please finish
+8. Define initial sprint plan - Identify what the group intends to complete in the next sprint, estimate effort where appropriate, and assign responsibilities.
+9. Setup GitHub repository - Establish the shared repository, access permissions, folder structure and contribution workflow.
+10. Establish contribution tracking - Agree how work, commits, issues and documentation will be recorded.
+11. Review completed work - Check that all criteria has been met on BPMN, scope, backlog and sprint plan are consistent.
+12. Begin I* modelling - if time permits, identify relevant actors, goals, dependencies and initial strategic relationships.
