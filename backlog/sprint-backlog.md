@@ -44,10 +44,37 @@ Sprint 1 backlog:
   - 4.14 - Review the model against the case study: Confirm that the model accurately reflects the enterprise and its business processes.
   - 4.15 - Finalise the strategic BPMN model: Incorporate agreed corrections and prepare the model for the Sprint 1 deliverables.
 
+5. **Analysis of Candidate Functionality 1 — Producer Product Listing and Inventory Management**
+  - 5.1 - Define the purpose of the functionality: Explain what Producer Product Listing and Inventory Management is intended to achieve.
+  - 5.2 - Identify the target users: Identify the users who interact with the functionality, particularly registered producers.
+  - 5.3 - Identify product listing requirements: Identify the information required to create a product listing, including name, description, category, price, quantity, availability period and farm origin.
+  - 5.4 - Identify additional product information: Identify relevant information such as harvest date, allergen details, organic certification and best-before date.
+  - 5.5 - Define product information validation: Identify the checks required to ensure mandatory information is present and valid.
+  - 5.6 - Define invalid submission handling: Establish what happens when information is missing or invalid and how the producer corrects it.
+  - 5.7 - Define organic certification verification: Establish how claimed organic certification is checked using an external or simulated verification service.
+  - 5.8 - Define verification failure handling: Identify how the process should respond when certification verification fails or the service is unavailable.
+  - 5.9 - Define product publication rules: Identify the conditions that must be satisfied before a product can be published and made available to customers.
+  - 5.10 - Define inventory management activities: Identify how producers update product quantities and seasonal availability.
+  - 5.11 - Define stock depletion rules: Establish what happens when a product's stock reaches zero and it must become unavailable for new orders.
+  - 5.12 - Define stock replenishment rules: Establish when a product can become available again after its stock is replenished.
+  - 5.13 - Define seasonal availability rules: Identify how the availability period affects whether a product can be made available again.
+  - 5.14 - Define the functionality's boundaries: Establish which activities belong to this functionality and which fall outside its scope.
+  - 5.15 - Identify dependencies and business value: Identify relevant dependencies and explain the value the functionality provides to producers, customers and the marketplace.
+  - 5.16 - Document the candidate functionality: Compile the purpose, users, requirements, rules, exceptions, boundaries and business value into a clear definition.
+
+6. **Analysis of Candidate Functionality 2**
+  - 6.1 - Review the case study for additional functionality: Identify other major marketplace capabilities described in the available requirements.
+  - 6.2 - Identify the second candidate functionality: Confirm the functionality selected by the group once the missing notes are available.
+  - 6.3 - Define the purpose of the functionality: Establish what the second functionality is intended to achieve.
+  - 6.4 - Identify the target users: Determine which actors will interact with or be affected by the functionality.
+  - 6.5 - Identify the main activities: Break down the functionality into its main business activities.
+  - 6.6 - Define the functionality's boundaries: Establish what is included and excluded from the functionality's scope.
+  - 6.7 - Identify dependencies: Determine how the functionality relates to the marketplace and the first candidate functionality.
+  - 6.8: Identify business value: Explain why the functionality is important to the enterprise and its users.
+  - 6.9 - Document the candidate functionality: Record the purpose, users, activities, boundaries, dependencies and business value.
    
 
-8. Identify candidate functionality 1 - Define Producer Product Listing and Inventory Management, including its purpose, boundaries and main business value.
-9. Identify candidate functionality 2 - Select and scope a second major functionality appropriate to the marketplace.
+
 10. Develop initial product backlog - Translate both candidate functionalities into prioritised user stories with initial acceptance criteria. 
 11. Define initial sprint plan - Identify what the group intends to complete in the next sprint, estimate effort where appropriate, and assign responsibilities.
 12. Setup GitHub repository - Establish the shared repository, access permissions, folder structure and contribution workflow.
