@@ -100,17 +100,51 @@ Sprint 1 backlog:
   - 8.10 - Document the sprint plan: Record the objectives, selected work, estimates, responsibilities and risks.
   - 8.11 - Review the sprint plan: Check that the planned work is achievable and supports the project objectives.
 
+9. **Setup of Github Repository**
+  - 9.1 - Create the repository: Create the shared GitHub repository if one does not already exist.
+  - 9.2 - Configure repository access: Add the group members and ensure they have appropriate permissions.
+  - 9.3 - Establish the folder structure: Organise the repository into appropriate folders for project documentation, models and other materials.
+  - 9.4 - Create the README file: Document the project name, purpose and basic repository information.
+  - 9.5 - Agree on a branching strategy: Decide how branches will be used when members work on different parts of the project.
+  - 9.6 - Establish commit conventions: Agree on how commit messages should describe changes.
+  - 9.7 - Define the contribution workflow: Agree on how members submit work, review changes and integrate contributions.
+  - 9.8 - Upload initial project materials: Add the initial project documents and relevant files to the repository.
+  - 9.9 - Test repository access: Confirm that group members can access the repository and carry out the required operations.
+  - 9.10 - Verify repository organisation: Check that the repository is structured clearly and project materials can be located easily.
 
-10. Develop initial product backlog - Translate both candidate functionalities into prioritised user stories with initial acceptance criteria. 
-11. Define initial sprint plan - Identify what the group intends to complete in the next sprint, estimate effort where appropriate, and assign responsibilities.
-12. Setup GitHub repository - Establish the shared repository, access permissions, folder structure and contribution workflow.
-13. Establish contribution tracking - Agree how work, commits, issues and documentation will be recorded.
-14. Review completed work - Check that all criteria has been met on BPMN, scope, backlog and sprint plan are consistent.
-15. Begin I* modelling - if time permits, identify relevant actors, goals, dependencies and initial strategic relationships.
+10. **Establish Contribution Tracking**
+  - 10.1 - Agree on a contribution tracking method: Decide how individual contributions and completed work will be recorded.
+  - 10.2 - Establish task tracking: Agree on how tasks will be assigned, updated and monitored.
+  - 10.3 - Define task statuses: Agree on statuses such as To Do, In Progress, In Review and Done.
+  - 10.4 - Establish issue tracking: Decide how blockers, questions and outstanding issues will be recorded.
+  - 10.5 - Agree on commit documentation: Establish how repository commits will identify the work being completed.
+  - 10.6 - Define documentation responsibilities: Agree on how meeting notes, modelling decisions and other project documentation will be maintained.
+  - 10.7 - Define the stand-up format: Agree how members will report completed work, planned work and any blockers.
+  - 10.8 - Record stand-up outcomes: Maintain meeting notes documenting progress, issues and agreed actions.
+  - 10.9 - Establish progress review procedures: Agree how the group will review completed work and identify outstanding tasks.
+  - 10.10 - Test the contribution tracking process: Record an initial task or contribution and confirm that members understand the agreed procedure.
 
+11. **Review Completed Work**
+  - 11.1 - Review the use case analysis: Check that the relevant stakeholders, objectives, activities and system interactions have been documented.
+  - 11.2 - Review the business process analysis; Confirm that the major business processes and their relationships have been identified.
+  - 11.3 - Review organisational responsibilities: Check that the relevant actors and their responsibilities have been documented.
+  - 11.4 - Review the strategic BPMN model: Verify that the model represents the enterprise's major processes, participants, activities, decisions and interactions.
+  - 11.5 - Review Candidate Functionality 1: Confirm that its purpose, scope, requirements and business value are clearly documented.
+  - 11.6 - Review Candidate Functionality 2: Check that the second functionality has been selected and scoped once the missing notes are available.
+  - 11.7 - Review the product backlog: Check that the user stories, acceptance criteria and priorities align with the candidate functionalities.
+  - 11.8 - Review the sprint plan: Confirm that the planned work, estimates and responsibilities are documented.
+  - 11.9 - Review the repository: Check that the repository is accessible, organised and contains the required project materials.
+  - 11.10 - Review group activity evidence: Confirm that contributions, task progress and weekly stand-up outcomes are being recorded.
+  - 11.11 - Identify incomplete work: Record outstanding tasks, inconsistencies and issues that need further attention.
+  - 11.12 - Agree on corrective actions; Assign responsibility for resolving outstanding issues and identify any work to carry forward.
 
-Notes:
-Break current sprint backlog into even smaller task e.g.
-4 - BPMN:
-4.1 - identify the groups of systems working together.
-4.2 - identify the tasks needed
+12. **Begin I* modelling - Optional if time permits**
+  - 12.1 - Review the purpose of i* modelling: Understand how i* represents actors, goals, tasks and dependencies.
+  - 12.2 - Identify strategic actors: Identify the main actors relevant to the enterprise.
+  - 12.3 - Identify actor goals: Establish what each actor wants to achieve.
+  - 12.4 - Identify actor tasks: Identify activities that actors perform to achieve their goals.
+  - 12.5 - Identify relevant resources: Identify information or resources that actors need to achieve their goals.
+  - 12.6 - Identify dependencies between actors: Determine where actors depend on one another to achieve goals, perform tasks or obtain resources.
+  - 12.7 - Record initial strategic relationships - Document relevant relationships between actors, goals, tasks and resources.
+  - 12.8 - Create an initial i* model: Produce a preliminary model if sufficient information and time are available.
+  - 12.9 - Record assumptions and outstanding questions: Document uncertainties that can be addressed in a later sprint.
