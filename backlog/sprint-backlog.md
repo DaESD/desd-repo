@@ -72,7 +72,33 @@ Sprint 1 backlog:
   - 6.7 - Identify dependencies: Determine how the functionality relates to the marketplace and the first candidate functionality.
   - 6.8: Identify business value: Explain why the functionality is important to the enterprise and its users.
   - 6.9 - Document the candidate functionality: Record the purpose, users, activities, boundaries, dependencies and business value.
-   
+
+7. **Develop Initial Product Backlog**
+  - 7.1 - Identify user needs for Candidate 1: Identify what users need to accomplish through Producer Product Listing and Inventory Management.
+  - 7.2 - Write user stories for Candidate 1: Express the identified needs as user stories using an agreed format.
+  - 7.3 - Define acceptance criteria for Candidate 1: Specify the conditions that must be satisfied for each user story to be considered complete.
+  - 7.4 - Identify user needs for Candidate 2: Identify the user needs associated with the second candidate functionality.
+  - 7.5 - Write user stories for Candidate 2: Translate those needs into user stories once the second functionality has been confirmed.
+  - 7.6 - Define acceptance criteria for Candidate 2: Specify the conditions that must be satisfied for each user story.
+  - 7.7 - Check stories against functionality scope: Ensure that the user stories align with the agreed scope of the two candidate functionalities.
+  - 7.8 - Review acceptance criteria: Check that the criteria are clear, specific and testable.
+  - 7.9 - Prioritise the user stories: Rank the stories according to business value, importance and dependencies.
+  - 7.10 - Estimate user story effort: Provide initial estimates using an agreed estimation method, where required.
+  - 7.11 - Consolidate the product backlog: Combine the user stories, acceptance criteria, priorities and estimates into one backlog.
+  - 7.12 - Review the product backlog: Check for missing requirements, duplication and inconsistencies with the candidate functionality definitions.
+
+8. **Define Initial Sprint Plan**
+  - 8.1 - Review the product backlog: Examine the available user stories and identify the work that may be suitable for the next sprint.
+  - 8.2 - Define sprint objectives: Agree on the outcomes the group intends to achieve during the next sprint.
+  - 8.3 - Select backlog items: Identify the user stories or other agreed work items to include in the sprint.
+  - 8.4 - Identify dependencies: Determine whether selected work depends on other tasks or decisions being completed first.
+  - 8.5 - Break selected work into smaller tasks: Identify the individual activities required to complete each selected backlog item.
+  - 8.6 - Estimate task effort: Estimate the effort required to complete the selected tasks.
+  - 8.7 - Assess team capacity: Consider the available time and each member's availability when selecting the amount of work.
+  - 8.8 - Allocate responsibilities: Agree on who will take responsibility for each task.
+  - 8.9 - Identify potential risks: Identify possible blockers or uncertainties that could affect the sprint.
+  - 8.10 - Document the sprint plan: Record the objectives, selected work, estimates, responsibilities and risks.
+  - 8.11 - Review the sprint plan: Check that the planned work is achievable and supports the project objectives.
 
 
 10. Develop initial product backlog - Translate both candidate functionalities into prioritised user stories with initial acceptance criteria. 
