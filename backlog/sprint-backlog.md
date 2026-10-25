@@ -138,7 +138,7 @@ Sprint 1 backlog:
   - 11.11 - Identify incomplete work: Record outstanding tasks, inconsistencies and issues that need further attention.
   - 11.12 - Agree on corrective actions; Assign responsibility for resolving outstanding issues and identify any work to carry forward.
 
-12. **Begin I* modelling - Optional if time permits**
+12. ***Begin I* modelling - Optional if time permits**
   - 12.1 - Review the purpose of i* modelling: Understand how i* represents actors, goals, tasks and dependencies.
   - 12.2 - Identify strategic actors: Identify the main actors relevant to the enterprise.
   - 12.3 - Identify actor goals: Establish what each actor wants to achieve.
