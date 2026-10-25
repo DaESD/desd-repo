@@ -1,16 +1,16 @@
 Sprint 1 backlog:
 
-1. Analyse of Use Case
-   1.1 - Read and analyse the use case: Identify the main business problem and the purpose of the marketplace functionality.
-   1.2 - Identify the stakeholders: Identify the parties involved, including producers, customers and relevant external services.
-   1.3 - Identify the system's objectives: Establish what the marketplace needs to achieve through the functionality described.
-   1.4 - Identify the producer's activities: List the activities performed by a producer when listing and managing products.
-   1.5 - Identify the system's activities: Identify the actions the system performs, including validating information, publishing products and updating                                                 availability.
+1. **Analyse of Use Case**
+  - 1.1 - Read and analyse the use case: Identify the main business problem and the purpose of the marketplace functionality.
+  - 1.2 - Identify the stakeholders: Identify the parties involved, including producers, customers and relevant external services.
+  - 1.3 - Identify the system's objectives: Establish what the marketplace needs to achieve through the functionality described.
+  - 1.4 - Identify the producer's activities: List the activities performed by a producer when listing and managing products.
+  - 1.5 - Identify the system's activities: Identify the actions the system performs, including validating information, publishing products and updating                                                 availability.
    1.6 - Identify external system interactions: Identify how the marketplace interacts with the external or simulated organic certification verification                                                     service.
    1.7 - Identify exceptional scenarios: Identify what happens when information is invalid, mandatory fields are missing or the verification service is                                               unavailable.
    1.8 - Document the findings: Summarise the use case analysis for use in subsequent modelling and functionality scoping tasks.
 
-2. Analysis of Major Business Processes
+2. **Analysis of Major Business Processes**
    2.1 - Identify the major business processes: Identify the main processes supported by the marketplace, using the case study as the basis.
    2.2 - Define the purpose of each process: Describe what each identified process achieves for the enterprise.
    2.3 - Identify activities within each process: Break down each major process into its main business activities.
@@ -19,7 +19,7 @@ Sprint 1 backlog:
    2.6 - Identify relationships between processes: Determine how the processes depend on or interact with one another.
    2.7 - Document the business processes: Compile the processes, activities, inputs, outputs and relationships into a structured overview.
 
-3. Analysis of Organisational Responsibilities
+3. **Analysis of Organisational Responsibilities**
    3.1 - Identify organisational actors: 
 
 
