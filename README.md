@@ -5,7 +5,9 @@ Main repo
 | -------- | ------- | ------- |
 | Imaan Mohamed | 23015907 | magicst4r |
 | Drashti Samgi | 24009943 | drashtisamgi |
-| Rodha Abdi Ali | 230... | Rodhaabdi |
+| Rodha Abdi Ali | 2... | Rodhaabdi |
+| Azra Rahman | 2... | FILL |
+| Khanh Pham | 2... | FILL |
 
 # Sprint 1 (12th October 2026) - Strategic Process Analysis and Project Setup
 
