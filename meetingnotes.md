@@ -36,3 +36,14 @@ Third stand-up & sprint review, group work was assigned individually with some c
 - Analysis of major business processes - Azra
 - Detailed strategic BPMN diagram, enterprise & use case - Rowda & Imaan
 - Detailed functionality scope & candidates - Drashti
+
+### feedback
+  - execute everything in use case 1 (limits scope)
+  - camunda resources (camunda academy)
+  - strategic (who is responsible for what)
+  - github is good
+  - track stuff and how we resolve conflicts
+  - write manageable tasks
+  - diagram (relatively well) grasped logics, how to use events etc
+  - diagram needs more comprehension (why we do it and how are they linked to business)
+  - more group like presentation, how each part links to each other
