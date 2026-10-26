@@ -1,6 +1,9 @@
 # desd-repo
-Main repo
+## Overview:
 
+## Description:
+
+## Team:
 | Team Member | Student # | Github |
 | -------- | ------- | ------- |
 | Imaan Mohamed | 23015907 | magicst4r |
@@ -9,20 +12,28 @@ Main repo
 | Azra Rahman | 2... | FILL |
 | Khanh Pham | 2... | FILL |
 
-# Sprint 1 (12th October 2026) - Strategic Process Analysis and Project Setup
+## Project Broad:
 
-20% of the Task 1 Group Mark
+## Repository Navigation:
+### Main Branch
+| Directory / File    | Description |
+| -------- | ------- |
+| Backlog  | This... |
+| Candidate Functionalities | This... |
+| README.md    | Project overview, description and repository guide. |
 
-Scheduled weekly stand-ups start from Sprint 1.
+### BPMN-dev Branch
+| Directory / File    | Description |
+| -------- | ------- |
+| BPMN/  | This... |
+| BPMN-photos/ | This... |
 
-Sprint 1 focuses on understanding the enterprise at a strategic level and establishing the project foundation.
+## Development Workflow:
+This is how our project work will be tackled, before starting and completing a task:
+- Check project board.
+- Create a separate branch for your task/s.
+- Open a pull request for review - depends on the task.
+- Update the relevant task progress on the project broad.
 
-Groups should demonstrate:
+## Documentation
 
-a strategic BPMN model representing the enterprise
-analysis of major business processes and organisational responsibilities
-identification and scoping of the two candidate major functionalities
-an initial product backlog and sprint plan
-effective use of the GitHub/GitLab repository
-clear evidence of group activity and contribution
-The i* models may be started during Sprint 1 as part of the development process, but they are not summatively evaluated in Sprint 1
