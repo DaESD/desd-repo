@@ -32,4 +32,22 @@ Customer ordering and transactions:
 The scope doesn't include the complete purchasing process. The workflow is responsible for providing accurate information about whether a product is available to order but doesn't implement the ordering and payment process that occurs when a customer wants to purchase an item. In a wider system, this is necessary however for this use case it is not needed.
 
 Delivery, Distribution and fulfilment:
-The system won't manage the physical 
+The system won't manage the physical movement of products. Activities such as delivery scheduling, courier allocation, shipping and dispatch confirmation are excluded. Although farm origin and seasonal availability are relevant to the listing, the use case doesn't include how products are transported, stored or delivered after an order has been placed.
+
+Certification issuance and regulatory administration:
+The system will not act as an certification authority, its responsibility is limited to checking whether the certificate is valid or not through an external service. The accuracy of the external certification service remains outside the system's control.
+
+Advanced inventory and agricultural management:
+The scope excludes wider farm management and inventory planning. The system itself will manage the available quantity associated with a marketplace listing but it won't attempt to manage the producer's entire operation or independently determine the amount of stock that needs to be produced.
+
+Pricing strategy and financial management:
+The system won't determine product prices through market analysis, competitor comparisons or dynamic pricing. Financial activities such as invoices and managing payouts are also excluded. The producer supplies the product price when listing a product. The use case doesn't define how the price is determined or how the marketplace manages the resulting transactions.
+
+Marketing and customer engagement:
+The scope excludes promotional campaigns, advertising, loyalty programmes and reviews. These features support the wider marketplace but aren't necessary to establish the product listing and availability workflow that is described in the case study.
+
+Business intelligence and reporting:
+The system won't provide advanced analytics relating to sales performance, revenue, customer behaviour, seasonal demand or producer performance. These functionalities require additional reporting requirements and data beyond what's necessary to create and maintain product listings. Basic records needed to maintain product information and verification outcomes remain within scope but the exclusion concerns the production of wider analytical reports and business insights.
+
+Overall, the functional scope is limited to the product listing lifecycle within the marketplace, covering product information submission, data validation, organic certification verification, publication and ongoing availability management. This includes the maintenance of accurate product information and the handling of unsuccessful validation, certification verification failures and external service interruptions. The system will also manage the link between product stock, seasonal availability and eligibility for new orders, ensuring that published listings accurately reflect whether the products can be supplied or not.
+The scope begins with an existing registered producer submitting a product and ends with the ongoing maintenance of the listing and its availability status. It does not include producer registration, customer transaction processing, delivery and fulfilment, certification issuance, wider farm management, automated pricing strategies, marketing or advanced business reporting. These activities are considered separate functions of the wider marketplace and are excluded from this use case unless it is introduced through additional requirements.
