@@ -46,4 +46,8 @@ Third stand-up & sprint review, group work was assigned individually with some c
   - write manageable tasks
   - diagram (relatively well) grasped logics, how to use events etc
   - diagram needs more comprehension (why we do it and how are they linked to business)
-  - more group like presentation, how each part links to each other
+  - more group like presentation, how each part links to each other e.g.:
+    1. What was the scope for the sprint?
+    2. how did we split scope into smaller tasks?
+    3. how were tasks split up amongst everyone?
+    4. How did the task become the produced artifact?
