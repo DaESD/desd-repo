@@ -8,7 +8,7 @@ This project aims to develop a marketplace connecting local food producers with 
 | Imaan Mohamed | 23015907 | magicst4r |
 | Drashti Samgi | 24009943 | drashtisamgi |
 | Rodha Abdi Ali | 24023498 | Rodhaabdi |
-| Azra Rahman | FILL | aspia-zra |
+| Azra Rahman | 23022737 | aspia-zra |
 | Khanh Pham | 24031743 | khanh-pham05 |
 
 ## Project Broad:
