@@ -37,7 +37,7 @@ Third stand-up & sprint review, group work was assigned individually with some c
 - Detailed strategic BPMN diagram, enterprise & use case - Rowda & Imaan
 - Detailed functionality scope & candidates - Drashti
 
-### feedback
+### sprint 1 review feedback
   - execute everything in use case 1 (limits scope)
   - camunda resources (camunda academy)
   - strategic (who is responsible for what)
