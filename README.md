@@ -19,15 +19,15 @@ Link: https://github.com/orgs/DaESD/projects/1
 ### Main Branch
 | Directory / File    | Description |
 | -------- | ------- |
-| Backlog  | This... |
-| Candidate Functionalities | This... |
+| Backlog  | Sprint backlog and product backlog. |
+| Candidate Functionalities | Contains functional + non functional requirements for both candidates and use-case. Contains scope for candidates and use-case. |
 | README.md    | Project overview, description and repository guide. |
 
 ### BPMN-dev Branch
 | Directory / File    | Description |
 | -------- | ------- |
-| BPMN/  | This... |
-| BPMN-photos/ | This... |
+| BPMN/  | Contains raw files of all created BPMN versions. |
+| BPMN-photos/ | Contains photos of all the created BPMNs for viewing. |
 
 ## Development Workflow:
 This is how our project work will be tackled, before starting and completing a task:
