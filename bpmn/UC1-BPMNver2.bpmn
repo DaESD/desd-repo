@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_UC1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Web Modeler" exporterVersion="f127538" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.10.0">
+  <bpmn:collaboration id="Collaboration_UC1" name="usecase1ver4">
+    <bpmn:participant id="Participant_Marketplace" name="Bristol regional food network" processRef="Process_UC1" />
+    <bpmn:participant id="Participant_0z82ce8" name="Local food producer" />
+    <bpmn:participant id="Participant_0rd1foi" name="External Organic Verification Service" processRef="Process_1d13jvg" />
+    <bpmn:messageFlow id="Flow_0nvnz61" sourceRef="Activity_1h7dp6e" targetRef="Task_VerifyOrganicCert" />
+    <bpmn:messageFlow id="Flow_17o6g0b" sourceRef="Task_VerifyOrganicCert" targetRef="Activity_1h7dp6e" />
+    <bpmn:messageFlow id="Flow_11k54vn" sourceRef="Task_VerifyOrganicCert" targetRef="Task_NotifyVerificationError" />
+    <bpmn:messageFlow id="Flow_0czg282" name="Product details" sourceRef="Participant_0z82ce8" targetRef="StartEvent_ProductSubmission" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_UC1" name="Producer Product Listing and Inventory Management" isExecutable="true">
+    <bpmn:laneSet id="LaneSet_UC1">
+      <bpmn:lane id="Lane_StockManagement" name="Stock Management">
+        <bpmn:flowNodeRef>Task_SetStatusAvailable</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_SetStatusUnavailable</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_CheckStockAndSeason</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_StockChanged</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Marketplace" name="Main Marketplace System">
+        <bpmn:flowNodeRef>StartEvent_ProductSubmission</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_SubmitProductDetails</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_ValidateSubmittedData</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_DataValid</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_CorrectProductDetails</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_HasOrganicCert</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_UpdateStockAndAvailability</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_PublishProduct</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_CertValid</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>EndEvent_ListingTerminated</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1h7dp6e</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_0gm5py4</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_NotifyVerificationError</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="StartEvent_ProductSubmission" name="Listing Requested">
+      <bpmn:outgoing>Flow_01</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:userTask id="Task_SubmitProductDetails" name="Submit product information">
+      <bpmn:incoming>Flow_Corrected</bpmn:incoming>
+      <bpmn:incoming>Flow_01</bpmn:incoming>
+      <bpmn:outgoing>Flow_02</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="Task_ValidateSubmittedData" name="Validate mandatory product data">
+      <bpmn:incoming>Flow_02</bpmn:incoming>
+      <bpmn:outgoing>Flow_03</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:exclusiveGateway id="Gateway_DataValid" name="Data valid &#38; complete?">
+      <bpmn:incoming>Flow_03</bpmn:incoming>
+      <bpmn:outgoing>Flow_DataInvalid</bpmn:outgoing>
+      <bpmn:outgoing>Flow_DataValidYes</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="Task_CorrectProductDetails" name="Prompt producer to correct details">
+      <bpmn:incoming>Flow_DataInvalid</bpmn:incoming>
+      <bpmn:outgoing>Flow_Corrected</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="Gateway_HasOrganicCert" name="Organic certification claimed?">
+      <bpmn:incoming>Flow_DataValidYes</bpmn:incoming>
+      <bpmn:outgoing>Flow_NoCert</bpmn:outgoing>
+      <bpmn:outgoing>Flow_16m1wie</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="Task_UpdateStockAndAvailability" name="Update product quantity &#38; seasonal availability">
+      <bpmn:incoming>Flow_Published</bpmn:incoming>
+      <bpmn:incoming>Flow_Loop2</bpmn:incoming>
+      <bpmn:outgoing>Flow_05</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="Task_PublishProduct" name="Publish product to marketplace">
+      <bpmn:incoming>Flow_NoCert</bpmn:incoming>
+      <bpmn:incoming>Flow_CertValidYes</bpmn:incoming>
+      <bpmn:outgoing>Flow_Published</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:exclusiveGateway id="Gateway_CertValid" name="Certification valid?">
+      <bpmn:incoming>Flow_03zoiyu</bpmn:incoming>
+      <bpmn:outgoing>Flow_CertValidYes</bpmn:outgoing>
+      <bpmn:outgoing>Flow_CertInvalid</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:endEvent id="EndEvent_ListingTerminated" name="Listing rejected or deferred">
+      <bpmn:incoming>Flow_FailEnd</bpmn:incoming>
+      <bpmn:incoming>Flow_CertInvalid</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:serviceTask id="Task_SetStatusAvailable" name="Set product status to &#39;Available&#39;">
+      <bpmn:incoming>Flow_Available</bpmn:incoming>
+      <bpmn:outgoing>Flow_08zxkrd</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Task_SetStatusUnavailable" name="Set product status to &#39;Unavailable&#39;">
+      <bpmn:incoming>Flow_Unavailable</bpmn:incoming>
+      <bpmn:outgoing>Flow_Loop2</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:exclusiveGateway id="Gateway_CheckStockAndSeason" name="Stock &#62; 0 AND within seasonal period?">
+      <bpmn:incoming>Flow_06</bpmn:incoming>
+      <bpmn:outgoing>Flow_Available</bpmn:outgoing>
+      <bpmn:outgoing>Flow_Unavailable</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:intermediateCatchEvent id="Event_StockChanged" name="Stock or season state change triggered">
+      <bpmn:incoming>Flow_05</bpmn:incoming>
+      <bpmn:outgoing>Flow_06</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_1" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:sendTask id="Activity_1h7dp6e" name="Contact external organic verification service">
+      <bpmn:incoming>Flow_16m1wie</bpmn:incoming>
+      <bpmn:outgoing>Flow_03zoiyu</bpmn:outgoing>
+    </bpmn:sendTask>
+    <bpmn:endEvent id="Event_0gm5py4" name="Product listed">
+      <bpmn:incoming>Flow_08zxkrd</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:userTask id="Task_NotifyVerificationError" name="Notify producer of verification system error / unverified status">
+      <bpmn:outgoing>Flow_FailEnd</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_01" sourceRef="StartEvent_ProductSubmission" targetRef="Task_SubmitProductDetails" />
+    <bpmn:sequenceFlow id="Flow_Corrected" sourceRef="Task_CorrectProductDetails" targetRef="Task_SubmitProductDetails" />
+    <bpmn:sequenceFlow id="Flow_02" sourceRef="Task_SubmitProductDetails" targetRef="Task_ValidateSubmittedData" />
+    <bpmn:sequenceFlow id="Flow_03" sourceRef="Task_ValidateSubmittedData" targetRef="Gateway_DataValid" />
+    <bpmn:sequenceFlow id="Flow_DataInvalid" name="No" sourceRef="Gateway_DataValid" targetRef="Task_CorrectProductDetails" />
+    <bpmn:sequenceFlow id="Flow_DataValidYes" name="Yes" sourceRef="Gateway_DataValid" targetRef="Gateway_HasOrganicCert" />
+    <bpmn:sequenceFlow id="Flow_NoCert" name="No" sourceRef="Gateway_HasOrganicCert" targetRef="Task_PublishProduct" />
+    <bpmn:sequenceFlow id="Flow_16m1wie" sourceRef="Gateway_HasOrganicCert" targetRef="Activity_1h7dp6e" />
+    <bpmn:sequenceFlow id="Flow_Published" sourceRef="Task_PublishProduct" targetRef="Task_UpdateStockAndAvailability" />
+    <bpmn:sequenceFlow id="Flow_Loop2" sourceRef="Task_SetStatusUnavailable" targetRef="Task_UpdateStockAndAvailability" />
+    <bpmn:sequenceFlow id="Flow_05" sourceRef="Task_UpdateStockAndAvailability" targetRef="Event_StockChanged" />
+    <bpmn:sequenceFlow id="Flow_CertValidYes" name="Yes" sourceRef="Gateway_CertValid" targetRef="Task_PublishProduct" />
+    <bpmn:sequenceFlow id="Flow_03zoiyu" sourceRef="Activity_1h7dp6e" targetRef="Gateway_CertValid" />
+    <bpmn:sequenceFlow id="Flow_CertInvalid" name="No" sourceRef="Gateway_CertValid" targetRef="EndEvent_ListingTerminated" />
+    <bpmn:sequenceFlow id="Flow_FailEnd" sourceRef="Task_NotifyVerificationError" targetRef="EndEvent_ListingTerminated" />
+    <bpmn:sequenceFlow id="Flow_Available" name="Yes" sourceRef="Gateway_CheckStockAndSeason" targetRef="Task_SetStatusAvailable" />
+    <bpmn:sequenceFlow id="Flow_08zxkrd" sourceRef="Task_SetStatusAvailable" targetRef="Event_0gm5py4" />
+    <bpmn:sequenceFlow id="Flow_Unavailable" name="No" sourceRef="Gateway_CheckStockAndSeason" targetRef="Task_SetStatusUnavailable" />
+    <bpmn:sequenceFlow id="Flow_06" sourceRef="Event_StockChanged" targetRef="Gateway_CheckStockAndSeason" />
+  </bpmn:process>
+  <bpmn:process id="Process_1d13jvg" isExecutable="false">
+    <bpmn:serviceTask id="Task_VerifyOrganicCert" name="Verify organic certification is valid" />
+    <bpmn:boundaryEvent id="BoundaryEvent_VerificationFailure" name="Service Unavailable / Error" attachedToRef="Task_VerifyOrganicCert">
+      <bpmn:errorEventDefinition id="ErrorEventDefinition_1" />
+    </bpmn:boundaryEvent>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_UC1">
+    <bpmndi:BPMNPlane id="BPMNPlane_UC1" bpmnElement="Collaboration_UC1">
+      <bpmndi:BPMNShape id="Participant_Marketplace_di" bpmnElement="Participant_Marketplace" isHorizontal="true">
+        <dc:Bounds x="160" y="160" width="1380" height="870" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_StockManagement_di" bpmnElement="Lane_StockManagement" isHorizontal="true">
+        <dc:Bounds x="190" y="770" width="1350" height="260" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Marketplace_di" bpmnElement="Lane_Marketplace" isHorizontal="true">
+        <dc:Bounds x="190" y="160" width="1350" height="610" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_ProductSubmission_di" bpmnElement="StartEvent_ProductSubmission">
+        <dc:Bounds x="242" y="242" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="216" y="285" width="89" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_SubmitProductDetails_di" bpmnElement="Task_SubmitProductDetails">
+        <dc:Bounds x="330" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_ValidateSubmittedData_di" bpmnElement="Task_ValidateSubmittedData">
+        <dc:Bounds x="330" y="470" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_DataValid_di" bpmnElement="Gateway_DataValid" isMarkerVisible="true">
+        <dc:Bounds x="505" y="485" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="500" y="542" width="60" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_CorrectProductDetails_di" bpmnElement="Task_CorrectProductDetails">
+        <dc:Bounds x="480" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_HasOrganicCert_di" bpmnElement="Gateway_HasOrganicCert" isMarkerVisible="true">
+        <dc:Bounds x="645" y="485" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="642" y="435" width="56" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_UpdateStockAndAvailability_di" bpmnElement="Task_UpdateStockAndAvailability">
+        <dc:Bounds x="1080" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_PublishProduct_di" bpmnElement="Task_PublishProduct">
+        <dc:Bounds x="830" y="470" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_CertValid_di" bpmnElement="Gateway_CertValid" isMarkerVisible="true">
+        <dc:Bounds x="1015" y="485" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1075" y="503" width="90" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_ListingTerminated_di" bpmnElement="EndEvent_ListingTerminated">
+        <dc:Bounds x="1292" y="312" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1266" y="274.5" width="87" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_SetStatusAvailable_di" bpmnElement="Task_SetStatusAvailable">
+        <dc:Bounds x="1360" y="800" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_SetStatusUnavailable_di" bpmnElement="Task_SetStatusUnavailable">
+        <dc:Bounds x="1360" y="900" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_CheckStockAndSeason_di" bpmnElement="Gateway_CheckStockAndSeason" isMarkerVisible="true">
+        <dc:Bounds x="1225" y="865" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1212" y="925" width="76" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_StockChanged_di" bpmnElement="Event_StockChanged">
+        <dc:Bounds x="1112" y="872" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1091" y="915" width="79" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0xcjnks_di" bpmnElement="Activity_1h7dp6e">
+        <dc:Bounds x="620" y="620" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_00y6o85_di" bpmnElement="Event_0gm5py4">
+        <dc:Bounds x="1392" y="312" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1377" y="293" width="67" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_NotifyVerificationError_di" bpmnElement="Task_NotifyVerificationError">
+        <dc:Bounds x="1160" y="650" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_01_di" bpmnElement="Flow_01">
+        <di:waypoint x="278" y="260" />
+        <di:waypoint x="330" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_Corrected_di" bpmnElement="Flow_Corrected">
+        <di:waypoint x="480" y="260" />
+        <di:waypoint x="430" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_02_di" bpmnElement="Flow_02">
+        <di:waypoint x="380" y="300" />
+        <di:waypoint x="380" y="470" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_03_di" bpmnElement="Flow_03">
+        <di:waypoint x="430" y="510" />
+        <di:waypoint x="505" y="510" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_DataInvalid_di" bpmnElement="Flow_DataInvalid">
+        <di:waypoint x="530" y="485" />
+        <di:waypoint x="530" y="300" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="538" y="390" width="15" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_DataValidYes_di" bpmnElement="Flow_DataValidYes">
+        <di:waypoint x="555" y="510" />
+        <di:waypoint x="645" y="510" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="591" y="492" width="18" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_NoCert_di" bpmnElement="Flow_NoCert">
+        <di:waypoint x="695" y="510" />
+        <di:waypoint x="830" y="510" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="756" y="492" width="15" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_16m1wie_di" bpmnElement="Flow_16m1wie">
+        <di:waypoint x="670" y="535" />
+        <di:waypoint x="670" y="620" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_Published_di" bpmnElement="Flow_Published">
+        <di:waypoint x="880" y="470" />
+        <di:waypoint x="880" y="260" />
+        <di:waypoint x="1080" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_Loop2_di" bpmnElement="Flow_Loop2">
+        <di:waypoint x="1460" y="940" />
+        <di:waypoint x="1500" y="940" />
+        <di:waypoint x="1500" y="250" />
+        <di:waypoint x="1180" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_05_di" bpmnElement="Flow_05">
+        <di:waypoint x="1130" y="300" />
+        <di:waypoint x="1130" y="872" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_CertValidYes_di" bpmnElement="Flow_CertValidYes">
+        <di:waypoint x="1015" y="510" />
+        <di:waypoint x="930" y="510" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="965" y="492" width="18" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_03zoiyu_di" bpmnElement="Flow_03zoiyu">
+        <di:waypoint x="720" y="660" />
+        <di:waypoint x="1040" y="660" />
+        <di:waypoint x="1040" y="535" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_CertInvalid_di" bpmnElement="Flow_CertInvalid">
+        <di:waypoint x="1040" y="485" />
+        <di:waypoint x="1040" y="330" />
+        <di:waypoint x="1292" y="330" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1048" y="404" width="15" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_FailEnd_di" bpmnElement="Flow_FailEnd">
+        <di:waypoint x="1210" y="650" />
+        <di:waypoint x="1210" y="330" />
+        <di:waypoint x="1292" y="330" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_Available_di" bpmnElement="Flow_Available">
+        <di:waypoint x="1250" y="865" />
+        <di:waypoint x="1250" y="840" />
+        <di:waypoint x="1360" y="840" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1256" y="822" width="18" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_08zxkrd_di" bpmnElement="Flow_08zxkrd">
+        <di:waypoint x="1410" y="800" />
+        <di:waypoint x="1410" y="348" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_Unavailable_di" bpmnElement="Flow_Unavailable">
+        <di:waypoint x="1275" y="890" />
+        <di:waypoint x="1318" y="890" />
+        <di:waypoint x="1318" y="940" />
+        <di:waypoint x="1360" y="940" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1302" y="873" width="15" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_06_di" bpmnElement="Flow_06">
+        <di:waypoint x="1148" y="890" />
+        <di:waypoint x="1225" y="890" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Participant_0vl8psl_di" bpmnElement="Participant_0z82ce8" isHorizontal="true">
+        <dc:Bounds x="160" y="80" width="1380" height="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_0iw77yo_di" bpmnElement="Participant_0rd1foi" isHorizontal="true">
+        <dc:Bounds x="160" y="1050" width="1380" height="160" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_VerifyOrganicCert_di" bpmnElement="Task_VerifyOrganicCert">
+        <dc:Bounds x="620" y="1070" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BoundaryEvent_VerificationFailure_di" bpmnElement="BoundaryEvent_VerificationFailure">
+        <dc:Bounds x="702" y="1132" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="741" y="1166" width="64" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0czg282_di" bpmnElement="Flow_0czg282">
+        <di:waypoint x="260" y="140" />
+        <di:waypoint x="260" y="242" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="263" y="173" width="73" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_17o6g0b_di" bpmnElement="Flow_17o6g0b">
+        <di:waypoint x="690" y="1070" />
+        <di:waypoint x="690" y="700" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0nvnz61_di" bpmnElement="Flow_0nvnz61">
+        <di:waypoint x="650" y="700" />
+        <di:waypoint x="650" y="1070" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_11k54vn_di" bpmnElement="Flow_11k54vn">
+        <di:waypoint x="690" y="1150" />
+        <di:waypoint x="950" y="1150" />
+        <di:waypoint x="950" y="700" />
+        <di:waypoint x="1160" y="700" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
