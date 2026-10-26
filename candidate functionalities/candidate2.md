@@ -1,4 +1,5 @@
-Candidate Major Functionality Two: Product Stock and Seasonal Availability Management
+**Major Candidate Functionality Two:**
+Product Stock and Seasonal Availability Management
 
 This functionality covers the ongoing management of published products, ensuring that their availability on the marketplace reflects the producer's current stock levels and the product's seasonal availability period.
 The purpose of this functionality is to maintain accurate product availability as circumstances change. 
