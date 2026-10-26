@@ -1,6 +1,11 @@
 # desd-repo
 Main repo
 
+| Team Member | Student # | Github |
+| -------- | ------- | ------- |
+| Imaan Mohamed | 23015907 | magicst4r |
+| Drashti Samgi | 24009943 | drashtisamgi |
+| Rodha Abdi Ali | 230... | Rodhaabdi |
 
 # Sprint 1 (12th October 2026) - Strategic Process Analysis and Project Setup
 
