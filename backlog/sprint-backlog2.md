@@ -53,7 +53,7 @@
  - 4.15 - Review against the use case: Confirm that the model represents the product listing and publication requirements and relevant exception scenarios.
  - 4.16 - Finalise the operational model: Save the completed BPMN model in GitHub.
 
-5.** Develop Operational BPMN Model 2: Product Stock and Seasonal Availability**
+5. **Develop Operational BPMN Model 2: Product Stock and Seasonal Availability**
  - 5.1 - Identify process participants: Identify the producer and marketplace system involved in managing stock and seasonal availability.
  - 5.2 - Define the start event: Identify the events that initiate stock or seasonal availability management, such as a producer updating stock or a scheduled availability check.
  - 5.3 - Model stock quantity updates: Represent the producer entering or updating the available product quantity.
