@@ -35,62 +35,68 @@
  - 3.12 - Review and correct the model: Resolve missing relationships, unclear elements or inconsistencies.
  - 3.13 - Finalise the SR model: Save the completed model and supporting documentation in GitHub.
 
-4. **Develop Operational BPMN Model 1 — Producer Product Listing and Inventory Management**
- - 4.1 - Identify process participants: Identify the producer, marketplace system and any external verification service involved.
- - 4.2 - Define the start event: Identify the event that starts the product listing process.
- - 4.3 - Model product information entry: Represent the producer entering the product name, description, category, price and available quantity
- - 4.4 - Include additional product information: Account for farm origin, availability period, harvest date, allergen details, organic certification and best-before date where applicable.
- - 4.5 - Model information validation: Represent the system checking whether the required product information is valid.
- - 4.6 - Add the validation gateway: Add a gateway to separate valid submissions from submissions containing missing or invalid information.
- - 4.7 - Model correction of invalid information: Represent the system requesting corrections and the producer resubmitting the information.
- - 4.8 - Model certification verification: Include verification of organic certification when a producer makes an organic claim.
- - 4.9 - Model verification failure: Represent what happens if certification cannot be verified or the external service is unavailable.
- - 4.10 - Model product publication: Represent publication after the required checks have been completed successfully.
- - 4.11 - Model inventory updates: Represent the producer updating product quantities and seasonal availability.
- - 4.12 - Model stock depletion: Include the behaviour that makes a product unavailable when its stock reaches zero.
- - 4.13 - Model stock replenishment: Include the behaviour that allows a product to become available again when stock is replenished and the seasonal period remains valid.
- - 4.14 - Define end events: Identify the possible outcomes and appropriate end events for the process.
- - 4.15 - Validate BPMN notation: Check gateways, sequence flows, events, activities and participant boundaries.
- - 4.16 - Review against the use case: Confirm that the model represents the requirements and exception scenarios in the original use case.
- - 4.17 - Finalise the operational model: Save the completed BPMN model in GitHub.
+4. **Develop Operational BPMN Model 1: Product Listing, Creation and Publication**
+ - 4.1 - Identify process participants: Identify the producer, marketplace system and any external certification verification service involved.
+ - 4.2 - Define the start event: Identify the event that initiates the product listing and creation process.
+ - 4.3 - Model product information entry: Represent the producer entering the product name, description, category, price, quantity and availability period.
+ - 4.4 - Include additional product information: Account for farm origin, harvest date, allergen details, organic certification and best-before date where applicable.
+ - 4.5 - Model information submission: Represent the producer submitting the completed product information to the marketplace system.
+ - 4.6 - Model information validation: Represent the system checking whether mandatory product information has been provided and is valid.
+ - 4.7 - Add the validation gateway: Add a gateway to separate valid submissions from submissions containing missing or invalid information.
+ - 4.8 - Model correction of invalid information: Represent the system requesting corrections and the producer updating and resubmitting the information.
+ - 4.9 - Model certification verification: Include verification of organic certification when a producer makes an organic claim.
+ - 4.10 - Model verification failure: Represent what happens if certification cannot be verified or the external verification service is unavailable.
+ - 4.11 - Model product creation: Represent the creation and storage of the product record after the required information has passed validation.
+ - 4.12 - Model product publication: Represent the product being published and made available on the marketplace after successful checks.
+ - 4.13 - Define end events: Identify the possible process outcomes, including successful publication and unsuccessful submission.
+ - 4.14 - Validate BPMN notation: Check gateways, sequence flows, events, activities and participant boundaries.
+ - 4.15 - Review against the use case: Confirm that the model represents the product listing and publication requirements and relevant exception scenarios.
+ - 4.16 - Finalise the operational model: Save the completed BPMN model in GitHub.
 
-5. **Develop Operational BPMN Model 2 — Second Major Functionality**
- - 5.1 - Confirm the second functionality: Identify the second major functionality agreed by the group.
- - 5.2 - Review the second use case: Examine the requirements, expected outcomes and relevant business rules.
- - 5.3 - Identify process participants: Identify the actors, systems and external services involved.
- - 5.4 - Define the start event: Identify what triggers the operational process.
- - 5.5 - Identify operational activities: Break down the use case into the individual tasks required to complete the process.
- - 5.6 - Identify decision points: Identify conditions that affect the process flow.
- - 5.7 - Add gateways: Represent the decision points using appropriate BPMN gateways.
- - 5.8 - Define sequence flows: Connect the activities and gateways in the correct execution order.
- - 5.9 - Model exception scenarios: Represent relevant failures, invalid inputs or alternative outcomes.
- - 5.10 - Define end events: Identify how and when the process can finish.
- - 5.11 - Validate the model: Check the model against the second use case and its business rules.
- - 5.12 - Finalise the operational model: Save the completed BPMN model in GitHub.
+5..** Develop Operational BPMN Model 2 — Product Stock and Seasonal Availability**
+ - 5.1 - Identify process participants: Identify the producer and marketplace system involved in managing stock and seasonal availability.
+ - 5.2 - Define the start event: Identify the events that initiate stock or seasonal availability management, such as a producer updating stock or a scheduled availability check.
+ - 5.3 - Model stock quantity updates: Represent the producer entering or updating the available product quantity.
+ - 5.4 - Model seasonal availability updates: Represent the producer setting or updating the period during which the product can be sold.
+ - 5.5 - Model stock validation: Represent the system checking that the submitted stock quantity is valid.
+ - 5.6 - Add the stock validation gateway: Separate valid stock updates from invalid or incomplete updates.
+ - 5.7 - Model correction of invalid updates: Represent the producer correcting and resubmitting invalid stock information.
+ - 5.8 - Model stock depletion: Represent the system detecting when the available product quantity reaches zero.
+ - 5.9 - Add the stock availability gateway: Determine whether the product has stock available for new orders.
+ - 5.10 - Model product unavailability: Represent the system automatically marking the product as unavailable when its stock reaches zero.
+ - 5.11 - Model stock replenishment: Represent the producer replenishing the product quantity and updating the stock information.
+ - 5.12 - Model seasonal period checking: Represent the system checking whether the product is still within its seasonal availability period.
+ - 5.13 - Add the seasonal availability gateway: Determine whether the product is still within its permitted availability period.
+ - 5.14 - Model product reactivation: Represent the system making the product available again when stock has been replenished and the seasonal period remains valid.
+ - 5.15 - Model expired seasonal availability: Represent the product remaining unavailable when its seasonal availability period has ended.
+ - 5.16 - Define end events: Identify the possible outcomes of stock and seasonal availability updates.
+ - 5.17 - Validate BPMN notation: Check gateways, sequence flows, events, activities and participant boundaries.
+ - 5.18 - Review against the use case: Confirm that the model represents the stock management and seasonal availability requirements.
+ - 5.19: Finalise the operational model: Save the completed BPMN model in GitHub.
 
 6. **Establish Traceability Between the Models**
  - 6.1 - Review i* model goals: Identify the relevant actor goals and dependencies in the SD and SR models.
  - 6.2 - Identify strategic processes: Identify the strategic BPMN processes that relate to the goals and dependencies.
- - 6.3 - Map strategic activities: Connect relevant activities in the strategic BPMN model to the detailed operational BPMN models.
- - 6.4 - Map goals to operational tasks: Identify which operational activities contribute to the goals represented in the i* models.
- - 6.5 - Check actor consistency: Ensure that actor responsibilities are consistent across all models.
- - 6.6 - Identify traceability gaps: Identify goals, dependencies or activities that are not represented consistently.
- - 6.7 - Correct inconsistencies: Update the relevant models to resolve identified gaps.
- - 6.8 - Create a traceability table: Document the relationships between the i* models, strategic BPMN and operational BPMN models.
- - 6.9 - Review traceability: Check that the relationships are understandable and supported by the models.
- - 6.10 - Save traceability evidence: Commit the traceability table and updated models to GitHub.
+ - 6.3 - Map product listing activities: Connect strategic activities to the operational BPMN model for product listing, creation and publication.
+ - 6.4 - Map stock management activities: Connect strategic activities to the operational BPMN model for product stock and seasonal availability.
+ - 6.5 - Map goals to operational tasks: Identify which operational activities contribute to the goals represented in the i* models.
+ - 6.6 - Check actor consistency: Ensure that actor responsibilities are consistent across all models.
+ - 6.7 - Identify traceability gaps: Identify goals, dependencies or activities that are not represented consistently.
+ - 6.8 - Correct inconsistencies: Update the relevant models to resolve identified gaps.
+ - 6.9 - Create a traceability table: Document the relationships between the i* models, strategic BPMN and both operational BPMN models.
+ - 6.10 - Review and save traceability evidence: Check the relationships and commit the traceability documentation to GitHub.
 
 7. **Set Up Initial Executable Camunda Processes**
  - 7.1 - Confirm Camunda environment: Establish which Camunda version and execution environment the group will use.
  - 7.2 - Review execution requirements: Identify the configuration and implementation requirements for deploying executable BPMN processes.
- - 7.3 - Select an initial workflow: Choose a suitable workflow to implement first, considering dependencies and available time.
- - 7.4 - Create the process definition: Create the initial Camunda process based on the corresponding operational BPMN model.
- - 7.5 - Configure start and end events: Configure the events needed to initiate and finish the executable process.
+ - 7.3 - Select initial workflows: Select suitable workflows from product listing and publication, and stock and seasonal availability, for initial implementation.
+ - 7.4 - Create process definitions: Create the initial Camunda process definitions based on the two operational BPMN models.
+ - 7.5 - Configure start and end events: Configure the events needed to initiate and finish the executable processes.
  - 7.6 - Configure sequence flows: Connect the process activities in the intended execution order.
- - 7.7 - Configure gateways: Add gateways and define the conditions that determine which path the process follows.
- - 7.8 - Check model consistency: Confirm that the executable process reflects the agreed operational BPMN model.
- - 7.9 - Deploy the process: Deploy the initial process definition to the group's Camunda environment.
- - 7.10 - Execute a process instance: Start a process instance to check that the deployed process can run.
+ - 7.7 - Configure gateways: Add gateways and define the conditions that determine which path each process follows.
+ - 7.8 - Check model consistency: Confirm that the executable processes reflect their corresponding operational BPMN models.
+ - 7.9 - Deploy the processes: Deploy the initial process definitions to the group's Camunda environment.
+ - 7.10 - Execute process instances: Start process instances to check that the deployed processes can run.
  - 7.11 - Resolve initial execution issues: Identify and fix basic deployment or execution errors.
 
 8. **Implement Camunda User Tasks and Forms**
@@ -158,8 +164,8 @@
 13. **Review Sprint 2 Deliverables**
  - 13.1 - Review the SD model: Confirm that the i* Strategic Dependency model is complete.
  - 13.2 - Review the SR model: Confirm that the i* Strategic Rationale model is complete.
- - 13.3 - Review operational BPMN model 1: Check that the product listing and inventory workflow is modelled in sufficient detail.
- - 13.4 - Review operational BPMN model 2: Check that the second agreed functionality is modelled in sufficient detail.
+ - 13.3 – Review product listing BPMN: Check that product listing, creation and publication are modelled in sufficient detail.
+ - 13.4 – Review stock management BPMN: Check that product stock and seasonal availability are modelled in sufficient detail.
  - 13.5 - Review model traceability: Confirm that traceability between the i* models and the strategic and operational BPMN models is documented.
  - 13.6 - Review Camunda execution: Confirm that the initial executable process or processes can be deployed and run.
  - 13.7 - Review user tasks and forms: Check that the implemented user tasks and forms function as intended.
