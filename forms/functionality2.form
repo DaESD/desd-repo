@@ -1,0 +1,81 @@
+{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.10.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "e24511c"
+  },
+  "schemaVersion": 19,
+  "id": "Form_1ego9gv",
+  "components": [
+    {
+      "text": "# Update Product Listing",
+      "type": "text",
+      "layout": {
+        "row": "Row_1ll196b",
+        "columns": null
+      },
+      "id": "Field_0z10i5g"
+    },
+    {
+      "type": "separator",
+      "layout": {
+        "row": "Row_0rj2cc4",
+        "columns": null
+      },
+      "id": "Field_1cldpms"
+    },
+    {
+      "label": "Update Product Quantity",
+      "type": "number",
+      "layout": {
+        "row": "Row_04wjndb",
+        "columns": null
+      },
+      "id": "Field_0rpa2m5",
+      "key": "number_9lkurn",
+      "increment": "1"
+    },
+    {
+      "subtype": "date",
+      "dateLabel": "Update Seasonal Availability From:",
+      "type": "datetime",
+      "layout": {
+        "row": "Row_0beexgn",
+        "columns": null
+      },
+      "id": "Field_1x967ai",
+      "key": "datetime_sctpwg"
+    },
+    {
+      "subtype": "date",
+      "dateLabel": "To:",
+      "type": "datetime",
+      "layout": {
+        "row": "Row_0beexgn",
+        "columns": null
+      },
+      "id": "Field_06jhx2p",
+      "key": "datetime_y0wvgwh"
+    },
+    {
+      "type": "separator",
+      "layout": {
+        "row": "Row_16u4szl",
+        "columns": null
+      },
+      "id": "Field_0hcjmtr"
+    },
+    {
+      "label": "Submit",
+      "action": "submit",
+      "type": "button",
+      "layout": {
+        "row": "Row_0vnmcdj",
+        "columns": null
+      },
+      "id": "Field_0tkxtms"
+    }
+  ],
+  "type": "default"
+}
