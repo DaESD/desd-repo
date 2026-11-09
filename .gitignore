@@ -1,0 +1,44 @@
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!.env.example
+# Camunda credentials
+camunda/connector-secrets.txt
+camunda/secrets/*
+
+# Local Camunda data
+camunda/camunda-data/*
+!camunda/camunda-data/.gitkeep
+
+# Temporary files
+*.zip
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Environment files
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+# Camunda credentials
+camunda/connector-secrets.txt
+camunda/secrets/*
+
+# Local Camunda data
+camunda/camunda-data/*
+!camunda/camunda-data/.gitkeep
+
+# Temporary files
+*.zip
+.DS_Store
+
+# Dependencies
+node_modules/
