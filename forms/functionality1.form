@@ -9,7 +9,7 @@
   "id": "Form_0vrt3cf",
   "components": [
     {
-      "text": "# Publish Product to Marketplace",
+      "text": "# Publish Product to Marketplace \nThis form is for entering information about the product you want to publish to our marketplace. If your product is organic, you will need to upload the organic certification which will then be sent to an external service to be verified.\n",
       "type": "text",
       "layout": {
         "row": "Row_0qb3tal",
@@ -33,7 +33,10 @@
         "row": "Row_144b5vk",
         "columns": null
       },
-      "id": "Field_0k0og10"
+      "id": "Field_0k0og10",
+      "properties": {
+        "key1": "value"
+      }
     },
     {
       "text": "Upload Product Image",
@@ -229,6 +232,9 @@
       "key": "fileupload",
       "validate": {
         "required": false
+      },
+      "conditional": {
+        "hide": "=checkbox_0cnat != true"
       }
     },
     {
