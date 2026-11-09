@@ -1,0 +1,237 @@
+{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.10.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "e24511c"
+  },
+  "schemaVersion": 19,
+  "id": "Form_0vrt3cf",
+  "components": [
+    {
+      "text": "# Publish Product to Marketplace",
+      "type": "text",
+      "layout": {
+        "row": "Row_0qb3tal",
+        "columns": null
+      },
+      "id": "Field_0vw08c2",
+      "properties": { }
+    },
+    {
+      "type": "separator",
+      "layout": {
+        "row": "Row_0ga30cs",
+        "columns": null
+      },
+      "id": "Field_0fbau8g"
+    },
+    {
+      "text": "General Product Information",
+      "type": "text",
+      "layout": {
+        "row": "Row_144b5vk",
+        "columns": null
+      },
+      "id": "Field_0k0og10"
+    },
+    {
+      "label": "Product Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0dahdm7",
+        "columns": null
+      },
+      "id": "Field_0yqztdc",
+      "key": "textfield_315kn",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Price",
+      "type": "number",
+      "layout": {
+        "row": "Row_0dahdm7",
+        "columns": 6
+      },
+      "id": "Field_11k7wz0",
+      "key": "price",
+      "increment": "0.01",
+      "validate": {
+        "required": true,
+        "min": "0.01"
+      }
+    },
+    {
+      "label": "Category",
+      "values": [
+        {
+          "label": "Vegetable",
+          "value": "value"
+        },
+        {
+          "label": "Fruit",
+          "value": "value2"
+        }
+      ],
+      "type": "select",
+      "layout": {
+        "row": "Row_0cqjs66",
+        "columns": null
+      },
+      "id": "Field_0dbcp2i",
+      "key": "select_xu3lde",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Product Description",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_1yxw1rd",
+        "columns": null
+      },
+      "id": "Field_1dt6qpd",
+      "key": "textarea_qunt5"
+    },
+    {
+      "label": "Available Quantity",
+      "type": "number",
+      "layout": {
+        "row": "Row_0s2tdxg",
+        "columns": 4
+      },
+      "id": "Field_0doox2w",
+      "key": "quantity",
+      "defaultValue": 0,
+      "increment": "1",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "subtype": "date",
+      "dateLabel": "Availability Period From:",
+      "type": "datetime",
+      "layout": {
+        "row": "Row_0s2tdxg",
+        "columns": null
+      },
+      "id": "Field_06akc82",
+      "key": "datetime_crva4k9",
+      "validate": {
+        "required": true
+      },
+      "disallowPassedDates": true
+    },
+    {
+      "subtype": "date",
+      "dateLabel": "To:",
+      "type": "datetime",
+      "layout": {
+        "row": "Row_0s2tdxg",
+        "columns": null
+      },
+      "id": "Field_03ml6uw",
+      "key": "datetime_sycj6xh",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "text": "Product Details",
+      "type": "text",
+      "layout": {
+        "row": "Row_029i635",
+        "columns": null
+      },
+      "id": "Field_0tx647p"
+    },
+    {
+      "subtype": "date",
+      "dateLabel": "Harvest Date",
+      "type": "datetime",
+      "layout": {
+        "row": "Row_0rbhpqv",
+        "columns": null
+      },
+      "id": "Field_0xwat1p",
+      "key": "datetime_ybw976"
+    },
+    {
+      "subtype": "date",
+      "dateLabel": "Best Before Date",
+      "type": "datetime",
+      "layout": {
+        "row": "Row_0rbhpqv",
+        "columns": null
+      },
+      "id": "Field_0d3onn4",
+      "key": "datetime_timdn"
+    },
+    {
+      "label": "Allergen Details",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_14pkmpb",
+        "columns": null
+      },
+      "id": "Field_1hxg2ie",
+      "key": "textarea_yzx5l"
+    },
+    {
+      "label": "Farm Origin",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1hqpwv3",
+        "columns": null
+      },
+      "id": "Field_1b61ucl",
+      "key": "textfield_nq26ua"
+    },
+    {
+      "label": "Organic Certification Available?",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_17q9wzf",
+        "columns": null
+      },
+      "id": "Field_05q0gt8",
+      "key": "checkbox_0cnat"
+    },
+    {
+      "label": "Upload Organic Certification",
+      "type": "filepicker",
+      "layout": {
+        "row": "Row_0twvmt8",
+        "columns": null
+      },
+      "id": "Field_08xxvvz",
+      "key": "fileupload",
+      "validate": {
+        "required": false
+      }
+    },
+    {
+      "label": "Submit",
+      "action": "submit",
+      "type": "button",
+      "layout": {
+        "row": "Row_1tek0r7",
+        "columns": null
+      },
+      "id": "Field_124pmso"
+    },
+    {
+      "type": "separator",
+      "layout": {
+        "row": "Row_1tja52i",
+        "columns": null
+      },
+      "id": "Field_03ed8od"
+    }
+  ],
+  "type": "default"
+}
