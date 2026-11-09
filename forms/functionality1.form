@@ -27,13 +27,30 @@
       "id": "Field_0fbau8g"
     },
     {
-      "text": "General Product Information",
+      "text": "### General Product Information",
       "type": "text",
       "layout": {
         "row": "Row_144b5vk",
         "columns": null
       },
       "id": "Field_0k0og10"
+    },
+    {
+      "text": "Upload Product Image",
+      "type": "text",
+      "layout": {
+        "row": "Row_142x2ni",
+        "columns": null
+      },
+      "id": "Field_1je81id"
+    },
+    {
+      "type": "image",
+      "layout": {
+        "row": "Row_0mq8jpf",
+        "columns": null
+      },
+      "id": "Field_1s4ws3d"
     },
     {
       "label": "Product Name",
@@ -141,7 +158,7 @@
       }
     },
     {
-      "text": "Product Details",
+      "text": "### Product Details",
       "type": "text",
       "layout": {
         "row": "Row_029i635",
