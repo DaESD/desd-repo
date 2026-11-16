@@ -1,0 +1,262 @@
+{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "64767e4"
+  },
+  "schemaVersion": 19,
+  "id": "Form_OrganicVerification",
+  "components": [
+    {
+      "text": "## Manual Organic Verification Inspection\nReview the farm's submitted records against the uploaded certificate document before approving.",
+      "type": "text",
+      "layout": {
+        "row": "Row_Header",
+        "columns": null
+      },
+      "id": "Field_HeaderText"
+    },
+    {
+      "label": "Farm Records (System Data)",
+      "components": [
+        {
+          "label": "Farm ID",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_Meta1",
+            "columns": 6
+          },
+          "id": "Field_FarmId",
+          "key": "farmId",
+          "readonly": true
+        },
+        {
+          "label": "Owner Name",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_Farm1",
+            "columns": 6
+          },
+          "id": "Field_OwnerName",
+          "key": "ownerName",
+          "readonly": true
+        },
+        {
+          "label": "Physical Farm Address",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_Farm2",
+            "columns": null
+          },
+          "id": "Field_Address",
+          "key": "physicalAddress",
+          "readonly": true
+        },
+        {
+          "label": "Certifying Body",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_Cert1",
+            "columns": 4
+          },
+          "id": "Field_CertBody",
+          "key": "certifyingBody",
+          "readonly": true
+        },
+        {
+          "label": "Certificate Number",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_Cert1",
+            "columns": 4
+          },
+          "id": "Field_CertNumber",
+          "key": "certificateNumber",
+          "readonly": true
+        },
+        {
+          "label": "Claimed Expiration Date",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_Cert1",
+            "columns": 4
+          },
+          "id": "Field_ClaimedExp",
+          "key": "claimedExpirationDate",
+          "readonly": true
+        }
+      ],
+      "showOutline": true,
+      "type": "group",
+      "layout": {
+        "row": "Row_GroupRecords",
+        "columns": null
+      },
+      "id": "Field_GroupRecords"
+    },
+    {
+      "label": "Uploaded Certificate Document",
+      "components": [
+        {
+          "label": "Document File Name",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_Doc1",
+            "columns": 6
+          },
+          "id": "Field_DocName",
+          "key": "documentFileName",
+          "readonly": true
+        },
+        {
+          "label": "Certificate Document Link",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_Doc1",
+            "columns": 6
+          },
+          "id": "Field_DocUrl",
+          "key": "documentUrl",
+          "description": "Copy or open this URL to inspect the uploaded certificate.",
+          "readonly": true
+        },
+        {
+          "label": "Document Preview",
+          "type": "documentPreview",
+          "layout": {
+            "row": "Row_DocPreview",
+            "columns": null
+          },
+          "id": "Field_DocPreview",
+          "dataSource": "=certificateDocument"
+        }
+      ],
+      "showOutline": true,
+      "type": "group",
+      "layout": {
+        "row": "Row_GroupDoc",
+        "columns": null
+      },
+      "id": "Field_GroupDoc"
+    },
+    {
+      "label": "Admin Inspection & Approval",
+      "components": [
+        {
+          "label": "1. Farm legal name and physical address match the uploaded certificate.",
+          "type": "checkbox",
+          "layout": {
+            "row": "Row_Check1",
+            "columns": null
+          },
+          "id": "Field_CheckName",
+          "key": "checkNameAndAddressMatch",
+          "validate": {
+            "required": false
+          }
+        },
+        {
+          "label": "2. Certificate license number matches system records.",
+          "type": "checkbox",
+          "layout": {
+            "row": "Row_Check2",
+            "columns": null
+          },
+          "id": "Field_CheckLicense",
+          "key": "checkLicenseNumberMatches"
+        },
+        {
+          "label": "3. Certificate is active and expiration date is in the future.",
+          "type": "checkbox",
+          "layout": {
+            "row": "Row_Check3",
+            "columns": null
+          },
+          "id": "Field_CheckValid",
+          "key": "checkCertificateIsValid"
+        },
+        {
+          "label": "4. Document shows no signs of tampering and bears an official seal/signature.",
+          "type": "checkbox",
+          "layout": {
+            "row": "Row_Check4",
+            "columns": null
+          },
+          "id": "Field_CheckAuth",
+          "key": "checkAuthenticityVerified"
+        },
+        {
+          "subtype": "date",
+          "dateLabel": "Confirmed Certificate Expiration Date",
+          "type": "datetime",
+          "layout": {
+            "row": "Row_Decision1",
+            "columns": 6
+          },
+          "id": "Field_VerifiedExpDate",
+          "key": "verifiedExpirationDate",
+          "validate": {
+            "required": true
+          }
+        },
+        {
+          "label": "Verification Decision",
+          "values": [
+            {
+              "label": "Approve Organic Verification",
+              "value": "APPROVE"
+            },
+            {
+              "label": "Request Resubmission from Farm",
+              "value": "REQUEST_RESUBMISSION"
+            },
+            {
+              "label": "Reject Verification",
+              "value": "REJECT"
+            }
+          ],
+          "type": "radio",
+          "layout": {
+            "row": "Row_Decision1",
+            "columns": 6
+          },
+          "id": "Field_Decision",
+          "key": "verificationDecision",
+          "validate": {
+            "required": true
+          }
+        },
+        {
+          "label": "Admin Inspection Notes",
+          "type": "textarea",
+          "layout": {
+            "row": "Row_Notes",
+            "columns": null
+          },
+          "id": "Field_AdminNotes",
+          "key": "adminNotes",
+          "description": "Required if requesting resubmission or rejecting."
+        },
+        {
+          "label": "Complete Review",
+          "action": "submit",
+          "type": "button",
+          "layout": {
+            "row": "Row_Submit",
+            "columns": null
+          },
+          "id": "Field_SubmitBtn"
+        }
+      ],
+      "showOutline": true,
+      "type": "group",
+      "layout": {
+        "row": "Row_GroupInspection",
+        "columns": null
+      },
+      "id": "Field_GroupInspection"
+    }
+  ],
+  "type": "default"
+}
