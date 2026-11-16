@@ -22,6 +22,7 @@ Link: https://github.com/orgs/DaESD/projects/1
 | Backlog  | Sprint backlog and product backlog. |
 | Candidate Functionalities | Contains functional + non functional requirements for both candidates and use-case. Contains scope for candidates and use-case. |
 | README.md    | Project overview, description and repository guide. |
+| documentation/ | Contains all external documentation. |
 
 ### BPMN-dev Branch
 | Directory / File    | Description |
@@ -39,3 +40,4 @@ This is how our project work will be tackled, before starting and completing a t
 ## Documentation
 Links to any external documentation present here.
 Camunda - UC-BPMNver2: https://hub.camunda.io/diagrams/a292cc9b-6ac7-4ad7-9007-db5c4d857f17--usecase1ver4?v=1027,536,0.638
+Camunda - OperationalBPMNver1: https://hub.camunda.io/diagrams/66838f4c-5c99-4b3f-8741-05b5d47caad9--operationalbpmnver1?v=1588,882,0.35
