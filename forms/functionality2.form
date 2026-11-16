@@ -3,13 +3,13 @@
   "executionPlatformVersion": "8.10.0",
   "exporter": {
     "name": "Camunda Web Modeler",
-    "version": "e24511c"
+    "version": "64767e4"
   },
   "schemaVersion": 19,
-  "id": "Form_1ego9gv",
+  "id": "Form_Func2",
   "components": [
     {
-      "text": "# Update Product Listing",
+      "text": "# Edit Product Listing",
       "type": "text",
       "layout": {
         "row": "Row_1ll196b",
@@ -20,10 +20,30 @@
     {
       "type": "separator",
       "layout": {
-        "row": "Row_0rj2cc4",
+        "row": "Row_1iy07av",
         "columns": null
       },
       "id": "Field_1cldpms"
+    },
+    {
+      "label": "Edit Product Listing?",
+      "values": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "type": "checklist",
+      "layout": {
+        "row": "Row_04wjndb",
+        "columns": null
+      },
+      "id": "Field_0x6w2r1",
+      "key": "edit_listing"
     },
     {
       "label": "Update Product Quantity",
@@ -34,7 +54,10 @@
       },
       "id": "Field_0rpa2m5",
       "key": "number_9lkurn",
-      "increment": "1"
+      "increment": "1",
+      "conditional": {
+        "hide": "=not(list contains(edit_listing, \"Yes\"))"
+      }
     },
     {
       "subtype": "date",
@@ -45,7 +68,10 @@
         "columns": null
       },
       "id": "Field_1x967ai",
-      "key": "datetime_sctpwg"
+      "key": "datetime_sctpwg",
+      "conditional": {
+        "hide": "=not(list contains(edit_listing, \"Yes\"))"
+      }
     },
     {
       "subtype": "date",
@@ -56,7 +82,10 @@
         "columns": null
       },
       "id": "Field_06jhx2p",
-      "key": "datetime_y0wvgwh"
+      "key": "datetime_y0wvgwh",
+      "conditional": {
+        "hide": "=not(list contains(edit_listing, \"Yes\"))"
+      }
     },
     {
       "type": "separator",
@@ -74,6 +103,11 @@
         "row": "Row_0vnmcdj",
         "columns": null
       },
+      "id": "Field_0tkxtms"
+    }
+  ],
+  "type": "default"
+}
       "id": "Field_0tkxtms"
     }
   ],
