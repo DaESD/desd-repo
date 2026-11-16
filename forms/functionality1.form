@@ -3,7 +3,7 @@
   "executionPlatformVersion": "8.10.0",
   "exporter": {
     "name": "Camunda Web Modeler",
-    "version": "e24511c"
+    "version": "64767e4"
   },
   "schemaVersion": 19,
   "id": "Form_0vrt3cf",
@@ -12,7 +12,7 @@
       "text": "# Publish Product to Marketplace \nThis form is for entering information about the product you want to publish to our marketplace. If your product is organic, you will need to upload the organic certification which will then be sent to an external service to be verified.\n",
       "type": "text",
       "layout": {
-        "row": "Row_0qb3tal",
+        "row": "Row_0w6pmei",
         "columns": null
       },
       "id": "Field_0vw08c2",
@@ -27,16 +27,13 @@
       "id": "Field_0fbau8g"
     },
     {
-      "text": "### General Product Information",
+      "text": "### Product Details",
       "type": "text",
       "layout": {
-        "row": "Row_144b5vk",
+        "row": "Row_0lvvh91",
         "columns": null
       },
-      "id": "Field_0k0og10",
-      "properties": {
-        "key1": "value"
-      }
+      "id": "Field_0tx647p"
     },
     {
       "text": "Upload Product Image",
@@ -50,10 +47,20 @@
     {
       "type": "image",
       "layout": {
-        "row": "Row_0mq8jpf",
+        "row": "Row_0z3ica6",
         "columns": null
       },
       "id": "Field_1s4ws3d"
+    },
+    {
+      "label": "Upload Image",
+      "type": "filepicker",
+      "layout": {
+        "row": "Row_1mcrtd3",
+        "columns": null
+      },
+      "id": "Field_02xa2pl",
+      "key": "filepicker_ir1v5s"
     },
     {
       "label": "Product Name",
@@ -77,6 +84,21 @@
       },
       "id": "Field_11k7wz0",
       "key": "price",
+      "increment": "0.01",
+      "validate": {
+        "required": true,
+        "min": "0.01"
+      }
+    },
+    {
+      "label": "Weight",
+      "type": "number",
+      "layout": {
+        "row": "Row_0d5savs",
+        "columns": null
+      },
+      "id": "Field_082o3t0",
+      "key": "number_r0g6t7p",
       "increment": "0.01",
       "validate": {
         "required": true,
@@ -128,7 +150,8 @@
       "defaultValue": 0,
       "increment": "1",
       "validate": {
-        "required": true
+        "required": true,
+        "min": "1"
       }
     },
     {
@@ -161,13 +184,32 @@
       }
     },
     {
-      "text": "### Product Details",
+      "label": "Upload Organic Certificate",
+      "type": "filepicker",
+      "layout": {
+        "row": "Row_0s2tdxg",
+        "columns": null
+      },
+      "id": "Field_08xxvvz",
+      "key": "fileupload",
+      "validate": {
+        "required": false
+      },
+      "conditional": {
+        "hide": "=checkbox_0cnat != true"
+      }
+    },
+    {
+      "text": "### General Product Information",
       "type": "text",
       "layout": {
         "row": "Row_029i635",
         "columns": null
       },
-      "id": "Field_0tx647p"
+      "id": "Field_0k0og10",
+      "properties": {
+        "key1": "value"
+      }
     },
     {
       "subtype": "date",
@@ -193,13 +235,83 @@
     },
     {
       "label": "Allergen Details",
-      "type": "textarea",
+      "values": [
+        {
+          "label": "Dairy",
+          "value": "Dairy"
+        },
+        {
+          "label": "Eggs",
+          "value": "Eggs"
+        },
+        {
+          "label": "Nuts",
+          "value": "Nuts"
+        },
+        {
+          "label": "Soy",
+          "value": "Soy"
+        },
+        {
+          "label": "Wheat",
+          "value": "Wheat"
+        },
+        {
+          "label": "Gluten",
+          "value": "Gluten"
+        },
+        {
+          "label": "Celery",
+          "value": "Celery"
+        },
+        {
+          "label": "Mustard",
+          "value": "Mustard"
+        },
+        {
+          "label": "Fish",
+          "value": "Fish"
+        },
+        {
+          "label": "Sesame",
+          "value": "Sesame"
+        },
+        {
+          "label": "Shellfish",
+          "value": "Shellfish"
+        },
+        {
+          "label": "No allergens",
+          "value": "N/A"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        }
+      ],
+      "type": "checklist",
       "layout": {
-        "row": "Row_14pkmpb",
+        "row": "Row_1jjy4r2",
         "columns": null
       },
-      "id": "Field_1hxg2ie",
-      "key": "textarea_yzx5l"
+      "id": "Field_0nts4sb",
+      "key": "allergies",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Enter Other Allergen",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1jjy4r2",
+        "columns": null
+      },
+      "id": "Field_0dxnkak",
+      "key": "otherallergen",
+      "conditional": {
+        "hide": "=not(list contains(allergies, \"Other\"))"
+      }
     },
     {
       "label": "Farm Origin",
@@ -222,16 +334,16 @@
       "key": "checkbox_0cnat"
     },
     {
-      "label": "Upload Organic Certification",
-      "type": "filepicker",
+      "label": "Organic Certificate Number",
+      "type": "textfield",
       "layout": {
         "row": "Row_0twvmt8",
         "columns": null
       },
-      "id": "Field_08xxvvz",
-      "key": "fileupload",
+      "id": "Field_0rf33si",
+      "key": "textfield_osxac",
       "validate": {
-        "required": false
+        "required": true
       },
       "conditional": {
         "hide": "=checkbox_0cnat != true"
