@@ -16,7 +16,8 @@ effective use of the GitHub/GitLab repository
 clear evidence of group activity and contribution
 The i* models may be started during Sprint 1 as part of the development process, but they are not summatively evaluated in Sprint 1
 
-## Task delegation:
+# Task delegation:
+## Sprint 1
 ### By 12/10/2026
 First stand-up, group work completed together as a unit.
 - Researched BPMN - tasks, events & gateways
@@ -51,3 +52,21 @@ Third stand-up & sprint review, group work was assigned individually with some c
     2. how did we split scope into smaller tasks?
     3. how were tasks split up amongst everyone?
     4. How did the task become the produced artifact?
+
+## Sprint 2
+### From 02/11/2026 to 16/11/2026
+Third stand-up & sprint review, group work was assigned individually but coordinated and communicated certain parts.
+- Detailed sprint backlog + stakeholder spec - Khanh
+- Operational BPMN - Imaan
+- SR + SI diagram - Rowda
+- User forms - Drashti
+- process variables, gateways and business logic - Azra
+
+Major feedback:
+- Lack of processes amongst the user forms, BPMN and I* diagrams
+Solution:
+- Created doc to coordinate additional processes to be added to all relevant parts and further match to use case.
+
+### sprint 2 review feedback
+
+
