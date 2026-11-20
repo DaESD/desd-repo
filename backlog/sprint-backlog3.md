@@ -66,9 +66,4 @@
 - 8.5 - Organise Repository Files: Ensure BPMN models, Python workers, supporting files and documentation are organised within the GitHub/GitLab repository.
 - 8.6 - Update Project Documentation: Update the README with relevant project information, setup instructions and implementation details.
 - 8.7 - Finalise Version Control Evidence: Commit and push final changes, ensuring the repository contains an auditable development history and the latest implementation.
-
-8.8
-
-Prepare Task 2 Integration
-
-Review the completed Task 1 components, document dependencies and ensure they are organised and ready for integration into Task 2.
+- 8.8 - Prepare Task 2 Integration: Review the completed Task 1 components, document dependencies and ensure they are organised and ready for integration into Task 2.
