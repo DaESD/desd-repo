@@ -63,7 +63,7 @@
 - 8.2 - Demonstrate Product Listing Process: Prepare and demonstrate the complete product listing, creation and publication process in Camunda.
 - 8.3 - Demonstrate Stock Management Process: Prepare and demonstrate the complete stock and seasonal availability process in Camunda.
 - 8.4 - Demonstrate Automation and Integration: Show the Camunda Forms, Python service tasks, automated business logic, process variables and interactions with supporting components.
-- 8.5 - Organise Repository Files: Ensure BPMN models, Python workers, supporting files and documentation are organised within the GitHub/GitLab repository.
+- 8.5 - Organise Repository Files: Ensure BPMN models, Python workers, supporting files and documentation are organised within the GitHub repository.
 - 8.6 - Update Project Documentation: Update the README with relevant project information, setup instructions and implementation details.
 - 8.7 - Finalise Version Control Evidence: Commit and push final changes, ensuring the repository contains an auditable development history and the latest implementation.
 - 8.8 - Prepare Task 2 Integration: Review the completed Task 1 components, document dependencies and ensure they are organised and ready for integration into Task 2.
