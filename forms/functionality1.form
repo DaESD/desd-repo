@@ -3,10 +3,10 @@
   "executionPlatformVersion": "8.10.0",
   "exporter": {
     "name": "Camunda Web Modeler",
-    "version": "64767e4"
+    "version": "ffa1f04"
   },
   "schemaVersion": 19,
-  "id": "Form_0vrt3cf",
+  "id": "Form_Func1",
   "components": [
     {
       "text": "# Publish Product to Marketplace \nThis form is for entering information about the product you want to publish to our marketplace. If your product is organic, you will need to upload the organic certification which will then be sent to an external service to be verified.\n",
@@ -60,7 +60,7 @@
         "columns": null
       },
       "id": "Field_02xa2pl",
-      "key": "filepicker_ir1v5s"
+      "key": "product_image"
     },
     {
       "label": "Product Name",
@@ -70,7 +70,7 @@
         "columns": null
       },
       "id": "Field_0yqztdc",
-      "key": "textfield_315kn",
+      "key": "Product_name",
       "validate": {
         "required": true
       }
@@ -98,7 +98,7 @@
         "columns": null
       },
       "id": "Field_082o3t0",
-      "key": "number_r0g6t7p",
+      "key": "Weight",
       "increment": "0.01",
       "validate": {
         "required": true,
@@ -110,11 +110,15 @@
       "values": [
         {
           "label": "Vegetable",
-          "value": "value"
+          "value": "vegetable"
         },
         {
           "label": "Fruit",
-          "value": "value2"
+          "value": "fruit"
+        },
+        {
+          "label": "Grocery",
+          "value": "Grocery"
         }
       ],
       "type": "select",
@@ -123,7 +127,7 @@
         "columns": null
       },
       "id": "Field_0dbcp2i",
-      "key": "select_xu3lde",
+      "key": "Product_category",
       "validate": {
         "required": true
       }
@@ -136,7 +140,10 @@
         "columns": null
       },
       "id": "Field_1dt6qpd",
-      "key": "textarea_qunt5"
+      "key": "product_description",
+      "validate": {
+        "required": true
+      }
     },
     {
       "label": "Available Quantity",
@@ -163,7 +170,7 @@
         "columns": null
       },
       "id": "Field_06akc82",
-      "key": "datetime_crva4k9",
+      "key": "start_date",
       "validate": {
         "required": true
       },
@@ -178,25 +185,9 @@
         "columns": null
       },
       "id": "Field_03ml6uw",
-      "key": "datetime_sycj6xh",
+      "key": "end_date",
       "validate": {
         "required": true
-      }
-    },
-    {
-      "label": "Upload Organic Certificate",
-      "type": "filepicker",
-      "layout": {
-        "row": "Row_0s2tdxg",
-        "columns": null
-      },
-      "id": "Field_08xxvvz",
-      "key": "fileupload",
-      "validate": {
-        "required": false
-      },
-      "conditional": {
-        "hide": "=checkbox_0cnat != true"
       }
     },
     {
@@ -220,7 +211,7 @@
         "columns": null
       },
       "id": "Field_0xwat1p",
-      "key": "datetime_ybw976"
+      "key": "harvest_date"
     },
     {
       "subtype": "date",
@@ -231,7 +222,7 @@
         "columns": null
       },
       "id": "Field_0d3onn4",
-      "key": "datetime_timdn"
+      "key": "bestbefore_date"
     },
     {
       "label": "Allergen Details",
@@ -298,20 +289,27 @@
       "key": "allergies",
       "validate": {
         "required": true
+      },
+      "conditional": {
+        "hide": "=(not(list contains(allergies, \"N/A\")) or count(allergies) = 1) and (not(list contains(allergies, \"Other\")) or (otherallergen != null and otherallergen != \"\"))"
       }
     },
     {
       "label": "Enter Other Allergen",
       "type": "textfield",
       "layout": {
-        "row": "Row_1jjy4r2",
+        "row": "Row_0b01yq5",
         "columns": null
       },
       "id": "Field_0dxnkak",
       "key": "otherallergen",
       "conditional": {
-        "hide": "=not(list contains(allergies, \"Other\"))"
-      }
+        "hide": "==not(list contains(allergies, \"Other\"))"
+      },
+      "validate": {
+        "pattern": "\"conditional\": {  \"hide\": \"=not(list contains(allergies, \\\"Other\\\"))\"}"
+      },
+      "properties": { }
     },
     {
       "label": "Farm Origin",
@@ -321,7 +319,10 @@
         "columns": null
       },
       "id": "Field_1b61ucl",
-      "key": "textfield_nq26ua"
+      "key": "farm_origin",
+      "validate": {
+        "required": true
+      }
     },
     {
       "label": "Organic Certification Available?",
@@ -331,22 +332,38 @@
         "columns": null
       },
       "id": "Field_05q0gt8",
-      "key": "checkbox_0cnat"
+      "key": "organic_check"
     },
     {
       "label": "Organic Certificate Number",
       "type": "textfield",
       "layout": {
-        "row": "Row_0twvmt8",
+        "row": "Row_13nvmmj",
         "columns": null
       },
       "id": "Field_0rf33si",
-      "key": "textfield_osxac",
+      "key": "certificate_number",
       "validate": {
         "required": true
       },
       "conditional": {
-        "hide": "=checkbox_0cnat != true"
+        "hide": "=organic_check != true"
+      }
+    },
+    {
+      "label": "Upload Organic Certificate",
+      "type": "filepicker",
+      "layout": {
+        "row": "Row_1fogrcf",
+        "columns": null
+      },
+      "id": "Field_08xxvvz",
+      "key": "fileupload",
+      "validate": {
+        "required": false
+      },
+      "conditional": {
+        "hide": "=organic_check != true"
       }
     },
     {
