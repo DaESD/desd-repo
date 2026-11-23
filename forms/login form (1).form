@@ -1,0 +1,162 @@
+{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.10.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "ffa1f04"
+  },
+  "schemaVersion": 19,
+  "id": "Form_1jovdxo",
+  "components": [
+    {
+      "text": "# Login Form",
+      "type": "text",
+      "layout": {
+        "row": "Row_0y4z0x8",
+        "columns": null
+      },
+      "id": "Field_1mcbqa7"
+    },
+    {
+      "type": "separator",
+      "layout": {
+        "row": "Row_19eu3rj",
+        "columns": null
+      },
+      "id": "Field_1h2o2kx"
+    },
+    {
+      "label": "I want to register as:",
+      "values": [
+        {
+          "label": "Producer",
+          "value": "producer"
+        },
+        {
+          "label": "Customer",
+          "value": "customer"
+        }
+      ],
+      "type": "radio",
+      "layout": {
+        "row": "Row_1w7wadi",
+        "columns": null
+      },
+      "id": "Field_16zxwk4",
+      "key": "prod_cust"
+    },
+    {
+      "label": "First Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_02qre8i",
+        "columns": null
+      },
+      "id": "Field_0amqmiq",
+      "key": "first_name",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Last Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_02qre8i",
+        "columns": null
+      },
+      "id": "Field_0vfw75b",
+      "key": "last_name",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Email",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1cbfcv9",
+        "columns": null
+      },
+      "id": "Field_13g24gm",
+      "key": "email",
+      "validate": {
+        "validationType": "email",
+        "required": true
+      }
+    },
+    {
+      "label": "Phone Number",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1vecyx4",
+        "columns": null
+      },
+      "id": "Field_1hl7c2n",
+      "key": "phone_number",
+      "validate": {
+        "required": true,
+        "validationType": "phone"
+      }
+    },
+    {
+      "subtype": "date",
+      "dateLabel": "Date of Birth",
+      "type": "datetime",
+      "layout": {
+        "row": "Row_16kd6fe",
+        "columns": null
+      },
+      "id": "Field_1m9wj4u",
+      "key": "birthday",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Address",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_16ucixh",
+        "columns": null
+      },
+      "id": "Field_05nae7v",
+      "key": "address"
+    },
+    {
+      "label": "Upload Business Document",
+      "type": "filepicker",
+      "layout": {
+        "row": "Row_0b20we6",
+        "columns": null
+      },
+      "id": "Field_094jlpa",
+      "key": "producer_upload",
+      "validate": {
+        "required": true
+      },
+      "conditional": {
+        "hide": "=prod_cust != \"producer\""
+      }
+    },
+    {
+      "type": "separator",
+      "layout": {
+        "row": "Row_0oy0lkv",
+        "columns": null
+      },
+      "id": "Field_13oytji"
+    },
+    {
+      "label": "Submit",
+      "action": "submit",
+      "type": "button",
+      "layout": {
+        "row": "Row_0y1oyh6",
+        "columns": null
+      },
+      "id": "Field_0ksvtzv"
+    }
+  ],
+  "type": "default"
+}
