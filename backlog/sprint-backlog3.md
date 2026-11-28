@@ -29,7 +29,7 @@
 - 4.1 - Integrate Camunda Forms and User Tasks: Ensure forms and user tasks work correctly within both operational processes.
 - 4.2 - Integrate Service Tasks: Connect the completed Python workers to their corresponding service tasks in Camunda.
 - 4.3 - Integrate Process Variables: Ensure information is passed correctly between user tasks, service tasks and gateways using process variables.
-- 4.4 - Integrate Database Operations: Ensure product information and stock updates are correctly stored and retrieved by the relevant processes.
+- 4.4 – Integrate Process Data Handling: Ensure product information, stock quantities and availability statuses are correctly passed, accessed and updated using Camunda process variables and the relevant service tasks.
 - 4.5 - Integrate External Verification Service: Ensure the organic certification verification service communicates correctly with the product listing process.
 - 4.6 - Test Component Integration: Test the interaction between Camunda, Python workers, databases, forms and external services.
 
